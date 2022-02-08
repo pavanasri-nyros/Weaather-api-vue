@@ -8,7 +8,7 @@
 <template>
   <v-container>
     <v-flex>
-      <v-card color="dark-grey darken-2">
+      <v-card>
         <v-card-text>
           <v-layout class="justify-center">
             <v-flex v-if="weather.weather" class="text-xs-center">
@@ -31,10 +31,10 @@
         <v-text-field
           v-model="city"
           label="Enter city name"
+          class="text"
           outlined
           rows="1"
           row-height="15"
-          solo
         ></v-text-field>
         <v-btn @click="getWeatherInfo">Submit</v-btn>
       </v-form>
@@ -80,5 +80,23 @@ export default {
   },
 }
 </script>
-
-<style lang="stylus" scoped></style>
+<style>
+.theme--dark.v-input {
+  color: #000000;
+}
+.text {
+  background-color: white;
+  color: black;
+}
+.theme--dark.v-input input {
+  color: black !important;
+  border: black !important;
+}
+.v-text-field--outlined fieldset {
+  color: black !important;
+}
+.custom-label-color .v-label {
+  color: red;
+  opacity: 1;
+}
+</style>
